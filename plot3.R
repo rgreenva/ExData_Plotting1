@@ -21,8 +21,7 @@ plot <- function(){
       ## Convert the "Date" column to a date value
       edata[, "Date"] <- as.Date(edata[, "Date"],
                                  format = "%d/%m/%Y")
-      ## Convert the Time column to a time value
-      ##edata[, "Time"] <- 
+
       ## Get the subset of data we are using for the plot
       testdates <- as.Date(c("2007-02-01", "2007-02-02"))
       plot.data <- edata[which(edata[, "Date"] == testdates[1] |
@@ -47,6 +46,6 @@ plot <- function(){
       legend("topright",
              c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
              col = c("Black", "Red", "Blue"), 
-             lty = 1)
+             lty = 1, cex = 0.6)
       dev.off()
 }
